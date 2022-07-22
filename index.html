@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discontceramic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="js/tailwind.js"></script>
+    <script src="js/tailwind.config.js"></script>
+</head>
+
+<body>
+    <header
+        class="bg-black md:bg-[url(img/intro.jpg)] bg-right-top bg-contain bg-no-repeat text-white w-full flex justify-between items-center flex-wrap pl-10 pr-10 md:pl-[70px] md:pr-[20px] pt-[25px] pb-[22px] 3xl:pl-[140px] 3xl:pr-[40px] 3xl:pt-[55px] 3xl:pb-[45px] text-white overflow-hidden">
+        <nav class="hidden md:block text-xs lg:text-sm underline-offset-4">
+            <a class="mr-[10px] hover:underline lg:mr-[20px]" href="">КАТАЛОГ</a>
+            <a class="mr-[10px] hover:underline lg:mr-[20px]" href="">СЕРТИФИКАТЫ КАЧЕСТВА</a>
+            <a class="mr-[10px] hover:underline lg:mr-[20px]" href="">КАК ЗАКАЗАТЬ?</a>
+            <a class="mr-[10px] hover:underline lg:mr-[20px]" href="">ПРЕИМУЩЕСТВА КЛИНКЕРА</a>
+            <a class="hover:underline" href="">КОНТАКТЫ</a>
+        </nav>
+        <img class="w-[80px] lg:w-[100px] hidden md:inline" src="img/logo.svg" alt="">
+        <img class="inline md:hidden" src="img/logo_mobile.svg" alt="">
+        <div class="flex md:hidden">
+            <svg onclick="showContact()" class="group cursor-pointer mr-4" width="52" height="52" viewBox="0 0 52 52"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="group-hover:stroke-orange" cx="26" cy="26" r="25.5" stroke="white" />
+                <path class="group-hover:fill-orange" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M33.8543 37.5648C34.801 37.1445 35.7099 36.6869 34.9857 35.0301C34.5354 34.0002 33.8998 33.1044 33.1336 32.2716C31.9021 30.9331 30.9405 31.1816 30.0227 31.6025C25.2721 33.78 19.525 23.8255 23.7859 20.8001C24.6095 20.2153 25.3055 19.5069 24.762 17.7714C24.424 16.6915 23.9663 15.6933 23.2994 14.7883C22.2265 13.3326 21.376 13.8908 20.5381 14.5007C12.0053 20.7125 24.2079 41.8489 33.8543 37.5649V37.5648Z"
+                    fill="white" />
+            </svg>
+            <svg onclick="document.querySelector('.menu').classList.remove('hidden')" class="group cursor-pointer"
+                width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                <circle class="group-hover:fill-orange group-hover:stroke-orange" cx="26" cy="26" r="25.5"
+                    fill="#9A9A9A" stroke="#9A9A9A" />
+                <rect x="14" y="15" width="24" height="4" />
+                <rect x="14" y="24" width="24" height="4" />
+                <rect x="14" y="33" width="24" height="4" />
+            </svg>
+        </div>
+        <div
+            class="w-full mt-[35px] mb-[30px] 2xl:mt-[70px] 2xl:mb-[60px] 3xl:mt-[135px] 3xl:mb-[120px] block md:flex items-center justify-between">
+            <h1
+                class="text-[68px] leading-[70px] underline-offset-[13px] sm:text-[90px] sm:leading-[95px] sm:underline-offset-[16px] mb-10 md:text-[65px] md:leading-[70px] md:underline-offset-[12px] lg:text-[90px] lg:underline-offset-[22px] lg:leading-[95px] 2xl:text-[120px] 2xl:leading-[125px] 2xl:underline-offset-[22px] decoration-2 3xl:text-[148px] 3xl:leading-[155px] underline 3xl:underline-offset-[27px] 3xl:decoration-[4px] mr-[20px]">
+                Большая<br>распродажа<br>клинкера
+            </h1>
+            <div
+                class="bg-orange rounded-full ml-[40px] md:ml-0 sm:w-[400px] md:w-[280px] lg:w-[350px] xl:w-[530px] text-medium flex items-center justify-center aspect-square">
+                <div>
+                    <span class="text-[16px] font-medium xl:text-[18px]">Экономьте до</span><br>
+                    <span
+                        class="text-[80px] leading-[75px] font-medium lg:text-[100px] lg:leading-[90px] xl:text-[165px] xl:leading-[150px]">60%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full flex justify-between items-center relative">
+            <div
+                class="text-grey flex items-center -rotate-90 absolute top-[-210px] left-[-150px] md:static md:rotate-0">
+                <a class="mr-[5px]" href="">
+                    <svg class="group" width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                        <path class="fill-[#9A9A9A] group-hover:fill-orange" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.50012 0C11.6423 0 15.0002 3.35793 15.0002 7.50012C15.0002 11.6423 11.6423 15.0002 7.50012 15.0002C3.35793 15.0002 0 11.6423 0 7.50012C0 3.35793 3.35793 0 7.50012 0ZM3.52865 7.04413C5.65354 6.11848 7.07022 5.50817 7.77918 5.2132C9.80343 4.3713 10.2239 4.22494 10.498 4.22021C10.5584 4.21922 10.693 4.23413 10.7805 4.30495C10.8543 4.36484 10.8745 4.4456 10.8841 4.50226C10.8938 4.55891 10.906 4.68813 10.8963 4.78927C10.7867 5.9418 10.3119 8.73862 10.0706 10.0296C9.96843 10.5758 9.76715 10.7589 9.57258 10.7768C9.14939 10.8158 8.82783 10.497 8.41806 10.2284C7.77644 9.8079 7.41414 9.54599 6.7914 9.13572C6.07176 8.66159 6.53819 8.40092 6.94846 7.97499C7.05581 7.86342 8.92077 6.16718 8.95681 6.01336C8.96128 5.99423 8.9655 5.92241 8.92276 5.88439C8.88027 5.84637 8.81715 5.85954 8.77193 5.86973C8.70757 5.88439 7.68276 6.5618 5.69752 7.90169C5.40653 8.10148 5.14313 8.19889 4.90706 8.19367C4.64688 8.18796 4.14616 8.04656 3.77416 7.92554C3.31767 7.77719 2.95487 7.69867 2.98643 7.44669C3.00283 7.31549 3.18374 7.1813 3.52865 7.04388V7.04413Z" />
+                    </svg>
+                </a>
+                <a class="mr-[5px]" href="">
+                    <svg class="group" width="15" height="15" viewBox="0 0 15 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="fill-[#9A9A9A] group-hover:fill-orange" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.50012 0C11.6423 0 15.0002 3.35793 15.0002 7.50012C15.0002 11.6423 11.6423 15.0002 7.50012 15.0002C3.35793 15.0002 0 11.6423 0 7.50012C0 3.35793 3.35793 0 7.50012 0ZM7.974 11.7315V7.89995H9.25997L9.45255 6.40673H7.97375V5.45325C7.97375 5.02087 8.09377 4.7264 8.71377 4.7264L9.50449 4.72615V3.39048C9.36782 3.37234 8.89841 3.33159 8.35221 3.33159C7.21211 3.33159 6.43158 4.02738 6.43158 5.3054V6.40648H5.14213V7.8997H6.43158V11.7313H7.97375L7.974 11.7315Z" />
+                    </svg>
+                </a>
+                <a class="mr-[5px]" href="">
+                    <svg class="group" width="15" height="15" viewBox="0 0 15 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="fill-[#9A9A9A] group-hover:fill-orange" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.50012 0C11.6423 0 15.0002 3.35793 15.0002 7.50012C15.0002 11.6423 11.6423 15.0002 7.50012 15.0002C3.35793 15.0002 0 11.6423 0 7.50012C0 3.35793 3.35793 0 7.50012 0ZM7.85745 10.4113C4.91923 10.4113 3.24362 8.39719 3.1738 5.04572H4.64539C4.69385 7.50558 5.77853 8.54778 6.63783 8.76248V5.04572H8.0237V7.16738C8.87231 7.07593 9.76367 6.10928 10.0646 5.04572H11.4505C11.2194 6.35629 10.2527 7.32294 9.56512 7.72053C10.2525 8.04283 11.3538 8.88598 11.7728 10.4113H10.2472C9.91947 9.39093 9.10341 8.6012 8.0237 8.49385V10.4113H7.85721H7.85745Z" />
+                    </svg>
+                </a>
+                <a class="mr-[20px]" href="">
+                    <svg class="group" width="15" height="15" viewBox="0 0 15 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="fill-[#9A9A9A] group-hover:fill-orange" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.50012 0C11.6423 0 15.0002 3.35793 15.0002 7.50012C15.0002 11.6423 11.6423 15.0002 7.50012 15.0002C3.35793 15.0002 0 11.6423 0 7.50012C0 3.35793 3.35793 0 7.50012 0ZM3.52865 7.04413C5.65354 6.11848 7.07022 5.50817 7.77918 5.2132C9.80343 4.3713 10.2239 4.22494 10.498 4.22021C10.5584 4.21922 10.693 4.23413 10.7805 4.30495C10.8543 4.36484 10.8745 4.4456 10.8841 4.50226C10.8938 4.55891 10.906 4.68813 10.8963 4.78927C10.7867 5.9418 10.3119 8.73862 10.0706 10.0296C9.96843 10.5758 9.76715 10.7589 9.57258 10.7768C9.14939 10.8158 8.82783 10.497 8.41806 10.2284C7.77644 9.8079 7.41414 9.54599 6.7914 9.13572C6.07176 8.66159 6.53819 8.40092 6.94846 7.97499C7.05581 7.86342 8.92077 6.16718 8.95681 6.01336C8.96128 5.99423 8.9655 5.92241 8.92276 5.88439C8.88027 5.84637 8.81715 5.85954 8.77193 5.86973C8.70757 5.88439 7.68276 6.5618 5.69752 7.90169C5.40653 8.10148 5.14313 8.19889 4.90706 8.19367C4.64688 8.18796 4.14616 8.04656 3.77416 7.92554C3.31767 7.77719 2.95487 7.69867 2.98643 7.44669C3.00283 7.31549 3.18374 7.1813 3.52865 7.04388V7.04413Z" />
+                    </svg>
+                </a>
+                Будьте в курсе новостей и акций
+            </div>
+            <svg class="group cursor-pointer hidden lg:inline" fill="none" width="52" height="52" viewBox="0 0 52 52"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle class="group-hover:stroke-orange" cx="26" cy="26" r="25.5" stroke="#9A9A9A" />
+                <path class="group-hover:fill-orange fill-grey"
+                    d="M35.9052 23.5786L33.1915 20.8095L26.0005 28.1475L18.8094 20.8095L16.0957 23.5786L26.0004 33.6857L35.9052 23.5786Z"
+                    fill="#9A9A9A" />
+            </svg>
+            <svg onclick="showContact()" class="hidden lg:inline group cursor-pointer" width="52" height="52"
+                viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="group-hover:stroke-orange" cx="26" cy="26" r="25.5" stroke="white" />
+                <path class="group-hover:fill-orange" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M33.8543 37.5648C34.801 37.1445 35.7099 36.6869 34.9857 35.0301C34.5354 34.0002 33.8998 33.1044 33.1336 32.2716C31.9021 30.9331 30.9405 31.1816 30.0227 31.6025C25.2721 33.78 19.525 23.8255 23.7859 20.8001C24.6095 20.2153 25.3055 19.5069 24.762 17.7714C24.424 16.6915 23.9663 15.6933 23.2994 14.7883C22.2265 13.3326 21.376 13.8908 20.5381 14.5007C12.0053 20.7125 24.2079 41.8489 33.8543 37.5649V37.5648Z"
+                    fill="white" />
+            </svg>
+        </div>
+
+        <div onclick="closeContact()"
+            class="contact fixed w-full h-full top-0 right-0 bg-[#00000080] flex justify-end z-[2] hidden">
+            <div class="bg-white h-full p-12 overflow-y-scroll">
+                <div class="w-full flex justify-between md:justify-end items-center mb-18">
+                    <img class="hidden md:inline w-24" src="/img/logo_dark.svg" alt="">
+                    <img class="w-36 inline md:hidden" src="/img/logo_mobile_dark.svg" alt="" srcset="">
+                    <svg class="inline md:hidden" onclick="document.querySelector('.contact').classList.add('hidden')"
+                        width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="26" cy="26" r="25.5" transform="rotate(-180 26 26)" stroke="#636363" />
+                        <path
+                            d="M16.0967 33.4215L18.8104 36.1906L26.0015 28.8526L33.1926 36.1906L35.9063 33.4215L26.0016 23.3144L16.0967 33.4215Z"
+                            fill="#636363" />
+                        <path
+                            d="M35.9033 18.7692L33.1896 16.0001L25.9985 23.3381L18.8074 16.0001L16.0938 18.7692L25.9984 28.8762L35.9033 18.7692Z"
+                            fill="#636363" />
+                    </svg>
+                </div>
+                <h2 class="text-[38px] font-medium whitespace-nowrap">+7 (495) 961-00-57</h2>
+                <h3 class="mb-8">+7 (499) 113-10-57</h3>
+                <button
+                    class="w-full py-3 border border-orange rounded text-orange text-xl font-medium hover:bg-orange hover:text-white transition mb-12">
+                    Заказать обратный звонок
+                </button>
+                <ul class="uppercase text-grey">
+                    <li class="text-black underline underline-offset-4 hover:text-orange cursor-pointer w-fit mb-2">
+                        москва
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Белгород
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Воронеж
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Курск
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Тамбов
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Тула
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Санкт-Петербург
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Краснодар
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Екатеринбург
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Тюмень
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Новосибирск
+                    </li>
+                    <li class="hover:text-orange cursor-pointer mb-2">
+                        Владивосток
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div onclick="closeMenu()"
+            class="menu fixed w-full h-full top-0 right-0 bg-[#00000080] flex justify-end z-[2] text-black hidden">
+            <div class="bg-white w-full h-full p-12">
+                <div class="w-full flex justify-between md:justify-end items-center mb-16">
+                    <img class="hidden md:inline w-24" src="/img/logo_dark.svg" alt="">
+                    <img class="w-36 inline md:hidden" src="/img/logo_mobile_dark.svg" alt="" srcset="">
+                    <svg class="inline md:hidden" onclick="document.querySelector('.menu').classList.add('hidden')"
+                        width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="26" cy="26" r="25.5" transform="rotate(-180 26 26)" stroke="#636363" />
+                        <path
+                            d="M16.0967 33.4215L18.8104 36.1906L26.0015 28.8526L33.1926 36.1906L35.9063 33.4215L26.0016 23.3144L16.0967 33.4215Z"
+                            fill="#636363" />
+                        <path
+                            d="M35.9033 18.7692L33.1896 16.0001L25.9985 23.3381L18.8074 16.0001L16.0938 18.7692L25.9984 28.8762L35.9033 18.7692Z"
+                            fill="#636363" />
+                    </svg>
+                </div>
+                <h2 class="font-medium text-2xl uppercase mb-12">Облицовочная плитка</h2>
+                <div class="w-10/12 overflow-y-scroll">
+                    <ul
+                        class="text-grey text-[14px] xl:text-[17px] uppercase underline decoration-dotted decoration-grey underline-offset-4">
+                        <li class="mb-8 xl:mb-12 hover:text-orange">
+                            <a href="">
+                                Облицовочный кирпич
+                            </a>
+                        </li>
+                        <li class="mb-8 xl:mb-12 hover:text-orange">
+                            <a href="">
+                                Ступени рядовые лофт и флорентинер
+                            </a>
+                        </li>
+                        <li class="mb-8 xl:mb-12 hover:text-orange">
+                            <a href="">
+                                ступени балконные
+                            </a>
+                        </li>
+                        <li class="mb-8 xl:mb-12 hover:text-orange">
+                            <a href="">
+                                напольная клинкерная плитка
+                            </a>
+                        </li>
+                        <li class="mb-8 xl:mb-12 hover:text-orange">
+                            <a href="">
+                                клинкерная брусчатка
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button
+                    class="group hover:text-orange hover:color-orange hover:border-orange border border-grey rounded px-[35px] py-[10px] text-grey flex items-center mb-12">
+                    <svg class="mr-[10px]" width="23" height="20" viewBox="0 0 23 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path class="group-hover:fill-orange fill-grey"
+                            d="M16.5114 0C14.2476 0 12.5167 1.38487 11.4514 2.5567C10.3863 1.38487 8.68188 0 6.3915 0C2.87608 0 0 2.87618 0 6.3915C0 7.21702 0.159759 8.04259 0.479268 8.81499C1.03862 10.1999 3.59512 12.7564 7.40339 16.4848C8.68164 17.7365 9.88 18.9083 10.4394 19.5473C10.679 19.8402 11.0518 20 11.4247 20C11.7975 20 12.1703 19.8402 12.41 19.5473C12.9693 18.9081 14.1677 17.7365 15.4459 16.4848C19.2541 12.7565 21.8108 10.1998 22.3701 8.81499C22.6896 8.04278 22.8493 7.2438 22.8493 6.3915C22.9028 2.87627 20.0267 0 16.5111 0H16.5114ZM19.9735 7.80296C19.5741 8.78846 15.7126 12.5433 13.6352 14.5673C12.8097 15.3663 12.0641 16.1119 11.4514 16.7244C10.8389 16.1119 10.0932 15.3662 9.26753 14.5673C7.19029 12.5432 3.32876 8.78831 2.92929 7.80296C2.74279 7.35025 2.66291 6.87077 2.66291 6.3915C2.66291 4.34085 4.34072 2.66322 6.39119 2.66322C7.72275 2.66322 9.001 3.56864 10.3593 5.48609C10.5989 5.83235 11.0251 6.04544 11.4512 6.04544C11.8774 6.04544 12.2767 5.83236 12.5431 5.48609C13.9013 3.56864 15.1795 2.66322 16.5111 2.66322C18.5618 2.66322 20.2394 4.34104 20.2394 6.3915C20.2396 6.87096 20.1329 7.35022 19.9732 7.80296H19.9735Z" />
+                    </svg>
+                    Избранное
+                </button>
+            </div>
+        </div>
+
+    </header>
+
+    <section id="product-container" class="flex">
+        <div class="hidden md:block w-14 h-inherit pt-20 border-r">
+        </div>
+        <div class="hidden lg:block w-3/12 h-inherit pt-24 border-r pl-10 pr-4">
+            <h2 class="text-black text-[20px] mb-8 xl:text-[26px] font-medium xl:mb-12">ОБЛИЦОВОЧНАЯ<br>ПЛИТКА</h2>
+            <ul
+                class="text-grey text-[14px] xl:text-[17px] uppercase underline decoration-dotted decoration-grey underline-offset-4">
+                <li class="mb-8 xl:mb-12 hover:text-orange">
+                    <a href="">
+                        Облицовочный кирпич
+                    </a>
+                </li>
+                <li class="mb-8 xl:mb-12 hover:text-orange">
+                    <a href="">
+                        Ступени рядовые лофт и флорентинер
+                    </a>
+                </li>
+                <li class="mb-8 xl:mb-12 hover:text-orange">
+                    <a href="">
+                        ступени балконные
+                    </a>
+                </li>
+                <li class="mb-8 xl:mb-12 hover:text-orange">
+                    <a href="">
+                        напольная клинкерная плитка
+                    </a>
+                </li>
+                <li class="mb-8 xl:mb-12 hover:text-orange">
+                    <a href="">
+                        клинкерная брусчатка
+                    </a>
+                </li>
+            </ul>
+            <button
+                class="group hover:text-orange hover:color-orange hover:border-orange border border-grey rounded px-[35px] py-[10px] text-grey flex items-center mb-12">
+                <svg class="mr-[10px]" width="23" height="20" viewBox="0 0 23 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="group-hover:fill-orange fill-grey"
+                        d="M16.5114 0C14.2476 0 12.5167 1.38487 11.4514 2.5567C10.3863 1.38487 8.68188 0 6.3915 0C2.87608 0 0 2.87618 0 6.3915C0 7.21702 0.159759 8.04259 0.479268 8.81499C1.03862 10.1999 3.59512 12.7564 7.40339 16.4848C8.68164 17.7365 9.88 18.9083 10.4394 19.5473C10.679 19.8402 11.0518 20 11.4247 20C11.7975 20 12.1703 19.8402 12.41 19.5473C12.9693 18.9081 14.1677 17.7365 15.4459 16.4848C19.2541 12.7565 21.8108 10.1998 22.3701 8.81499C22.6896 8.04278 22.8493 7.2438 22.8493 6.3915C22.9028 2.87627 20.0267 0 16.5111 0H16.5114ZM19.9735 7.80296C19.5741 8.78846 15.7126 12.5433 13.6352 14.5673C12.8097 15.3663 12.0641 16.1119 11.4514 16.7244C10.8389 16.1119 10.0932 15.3662 9.26753 14.5673C7.19029 12.5432 3.32876 8.78831 2.92929 7.80296C2.74279 7.35025 2.66291 6.87077 2.66291 6.3915C2.66291 4.34085 4.34072 2.66322 6.39119 2.66322C7.72275 2.66322 9.001 3.56864 10.3593 5.48609C10.5989 5.83235 11.0251 6.04544 11.4512 6.04544C11.8774 6.04544 12.2767 5.83236 12.5431 5.48609C13.9013 3.56864 15.1795 2.66322 16.5111 2.66322C18.5618 2.66322 20.2394 4.34104 20.2394 6.3915C20.2396 6.87096 20.1329 7.35022 19.9732 7.80296H19.9735Z" />
+                </svg>
+                Избранное
+            </button>
+        </div>
+        <div class="w-full lg:w-9/12 h-inherit px-[4%] md:p-0">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                <div class="col-span-1 pt-20 md:border-r"></div>
+                <div class="hidden md:block col-span-1 pt-20 xl:border-r"></div>
+                <div class="hidden xl:block col-span-1 pt-20"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                <div class="product-card group col-span-1 hover:bg-[#f6f6f6] md:border-r p-[8%]">
+                    <div class="product-head w-full mb-4 relative overflow-hidden">
+                        <img class="w-full group-hover:scale-125 transition-transform duration-500"
+                            src="img/mockup/1.jpg" alt="">
+                        <div onclick="openProductCard()"
+                            class="absolute top-0 left-0 w-full h-full bg-black opacity-0 hover:opacity-[0.2] cursor-pointer transition-opacity">
+                            <img class="absolute top-[calc(50%-35px)] left-[calc(50%-35px)]"
+                                src="/img/icons/increase.svg" alt="" srcset="">
+                        </div>
+                    </div>
+                    <input class="product-checkbox hidden" id="product-checkbox-1" class="hidden" type="checkbox">
+                    <label for="product-checkbox-1"
+                        class="product-checkbox-label relative -top-[calc(1rem+14px)] left-[calc(50%-14px)] w-fit block">
+                        <svg class="visible md:invisible -bottom-[14px] left-[calc(50%-14px)]" width="28" height="28"
+                            viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14" cy="14" r="13.75" fill="#F04B38" stroke="#F04B38" stroke-width="0.5" />
+                            <path
+                                d="M19.3327 12.6957L17.8715 11.2046L13.9993 15.1558L10.1272 11.2046L8.66602 12.6957L13.9993 18.1379L19.3327 12.6957Z"
+                                fill="white" />
+                        </svg>
+                    </label>
+                    <div class="product-content">
+                        <div class="flex text-[13px] justify-between mb-6">
+                            <div class="w-1/3 text-grey mr-2">
+                                <span class="block mb-1">
+                                    Облицовочная плитка
+                                </span><br>
+                                <span>
+                                    240x71x7 мм
+                                </span>
+                            </div>
+                            <div class="text-grey">
+                                <span class="text-black text-[17px] font-medium">1001 м<sup>2</sup></span>
+                                <span class="block mb-4">остаток</span>
+                                <span>R7.WK63</span>
+                            </div>
+                            <div class="flex justify-end text-grey">
+                                <svg width="23" height="20" viewBox="0 0 23 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path class="stroke-black hover:stroke-orange hover:fill-orange"
+                                        d="M10.7114 3.2293L11.4513 4.04338L12.1913 3.22937C13.1875 2.13364 14.6688 1 16.5114 1C19.4776 1 21.8943 3.42811 21.8494 6.37628L21.8493 6.38389V6.3915C21.8493 7.11319 21.7152 7.78222 21.4461 8.43267L21.446 8.43266L21.4429 8.4405C21.3536 8.66145 21.1535 8.9963 20.7943 9.46477C20.4431 9.92264 19.9753 10.4631 19.393 11.0912C18.2273 12.3486 16.654 13.9026 14.7463 15.7702L14.7462 15.7703L14.6312 15.8829C13.4115 17.0773 12.2313 18.2329 11.6574 18.8888L11.6466 18.9012L11.6361 18.914C11.6036 18.9538 11.5259 19 11.4247 19C11.3233 19 11.2458 18.9537 11.2134 18.9141L11.2028 18.9012L11.1918 18.8886C10.6164 18.2313 9.43158 17.0712 8.20812 15.8732L8.10304 15.7703L8.10296 15.7702C6.1953 13.9026 4.622 12.3486 3.45632 11.0912C2.874 10.4631 2.40625 9.92267 2.05512 9.4648C1.69586 8.99635 1.49575 8.66148 1.4065 8.44049L1.40653 8.44048L1.40333 8.43274C1.13494 7.78394 1 7.08847 1 6.3915C1 3.42845 3.42838 1 6.3915 1C8.25881 1 9.71347 2.13138 10.7114 3.2293Z"
+                                        stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="font-medium text-2xl leading-7 mb-8">
+                            Westerwaelder Klinker Rot-blau-geflammt
+                        </h3>
+                        <div class="flex justify-between mb-10">
+                            <div>
+                                <span class="line-through decoration-orange mb-2">
+                                    2400 ₽
+                                </span><br>
+                                <span class="text-[44px] xl:text-[36px] 2xl:text-[46px] font-medium">1240 ₽</span><span
+                                    class="font-medium text-[20px]">/м<sup>2</sup></span>
+                            </div>
+                            <div
+                                class="flex justify-center items-center bg-orange text-white font-medium text-2xl w-[82px] h-[82px] xl:text-xl xl:w-[60px] xl:h-[60px] 2xl:text-2xl 2xl:w-[82px] 2xl:h-[82px] rounded-full">
+                                -60%
+                            </div>
+                        </div>
+                        <button
+                            class="order-btn w-full invisible group-hover:visible text-xl text-orange hover:text-white hover:bg-orange font-medium border border-orange rounded py-2">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card group col-span-1 hover:bg-[#f6f6f6] md:border-r p-[8%]">
+                    <div class="product-head w-full mb-4">
+                        <img class="w-full" src="img/mockup/2.jpg" alt="">
+                    </div>
+                    <input class="product-checkbox hidden" id="product-checkbox-2" class="hidden" type="checkbox">
+                    <label for="product-checkbox-2"
+                        class="product-checkbox-label relative -top-[calc(1rem+14px)] left-[calc(50%-14px)] w-fit block transition-transform">
+                        <svg class="visible md:invisible -bottom-[14px] left-[calc(50%-14px)]" width="28" height="28"
+                            viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14" cy="14" r="13.75" fill="#F04B38" stroke="#F04B38" stroke-width="0.5" />
+                            <path
+                                d="M19.3327 12.6957L17.8715 11.2046L13.9993 15.1558L10.1272 11.2046L8.66602 12.6957L13.9993 18.1379L19.3327 12.6957Z"
+                                fill="white" />
+                        </svg>
+                    </label>
+                    <div class="product-content">
+                        <div class="flex text-[13px] justify-between mb-6">
+                            <div class="w-1/3 text-grey mr-2">
+                                <span class="block mb-1">
+                                    Облицовочная плитка
+                                </span><br>
+                                <span>
+                                    240x71x7 мм
+                                </span>
+                            </div>
+                            <div class="text-grey">
+                                <span class="text-black text-[17px] font-medium">1001 м<sup>2</sup></span>
+                                <span class="block mb-4">остаток</span>
+                                <span>R7.WK63</span>
+                            </div>
+                            <div class="flex justify-end text-grey">
+                                <svg width="23" height="20" viewBox="0 0 23 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path class="stroke-black hover:stroke-orange hover:fill-orange"
+                                        d="M10.7114 3.2293L11.4513 4.04338L12.1913 3.22937C13.1875 2.13364 14.6688 1 16.5114 1C19.4776 1 21.8943 3.42811 21.8494 6.37628L21.8493 6.38389V6.3915C21.8493 7.11319 21.7152 7.78222 21.4461 8.43267L21.446 8.43266L21.4429 8.4405C21.3536 8.66145 21.1535 8.9963 20.7943 9.46477C20.4431 9.92264 19.9753 10.4631 19.393 11.0912C18.2273 12.3486 16.654 13.9026 14.7463 15.7702L14.7462 15.7703L14.6312 15.8829C13.4115 17.0773 12.2313 18.2329 11.6574 18.8888L11.6466 18.9012L11.6361 18.914C11.6036 18.9538 11.5259 19 11.4247 19C11.3233 19 11.2458 18.9537 11.2134 18.9141L11.2028 18.9012L11.1918 18.8886C10.6164 18.2313 9.43158 17.0712 8.20812 15.8732L8.10304 15.7703L8.10296 15.7702C6.1953 13.9026 4.622 12.3486 3.45632 11.0912C2.874 10.4631 2.40625 9.92267 2.05512 9.4648C1.69586 8.99635 1.49575 8.66148 1.4065 8.44049L1.40653 8.44048L1.40333 8.43274C1.13494 7.78394 1 7.08847 1 6.3915C1 3.42845 3.42838 1 6.3915 1C8.25881 1 9.71347 2.13138 10.7114 3.2293Z"
+                                        stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="font-medium text-2xl leading-7 mb-8">
+                            Westerwaelder Klinker Rot-blau-geflammt
+                        </h3>
+                        <div class="flex justify-between mb-10">
+                            <div>
+                                <span class="line-through decoration-orange mb-2">
+                                    2400 ₽
+                                </span><br>
+                                <span class="text-[44px] xl:text-[36px] 2xl:text-[46px] font-medium">1240 ₽</span><span
+                                    class="font-medium text-[20px]">/м<sup>2</sup></span>
+                            </div>
+                            <div
+                                class="flex justify-center items-center bg-orange text-white font-medium text-2xl w-[82px] h-[82px] xl:text-xl xl:w-[60px] xl:h-[60px] 2xl:text-2xl 2xl:w-[82px] 2xl:h-[82px] rounded-full">
+                                -60%
+                            </div>
+                        </div>
+                        <button
+                            class="order-btn w-full invisible group-hover:visible text-xl text-orange hover:text-white hover:bg-orange font-medium border border-orange rounded py-2">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card group col-span-1 hover:bg-[#f6f6f6] md:border-r p-[8%]">
+                    <div class="product-head w-full mb-4">
+                        <img class="w-full" src="img/mockup/3.jpg" alt="">
+                    </div>
+                    <input class="product-checkbox hidden" id="product-checkbox-3" class="hidden" type="checkbox">
+                    <label for="product-checkbox-3"
+                        class="product-checkbox-label relative -top-[calc(1rem+14px)] left-[calc(50%-14px)] w-fit block">
+                        <svg class="visible md:invisible -bottom-[14px] left-[calc(50%-14px)]" width="28" height="28"
+                            viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14" cy="14" r="13.75" fill="#F04B38" stroke="#F04B38" stroke-width="0.5" />
+                            <path
+                                d="M19.3327 12.6957L17.8715 11.2046L13.9993 15.1558L10.1272 11.2046L8.66602 12.6957L13.9993 18.1379L19.3327 12.6957Z"
+                                fill="white" />
+                        </svg>
+                    </label>
+                    <div class="product-content">
+                        <div class="flex text-[13px] justify-between mb-6">
+                            <div class="w-1/3 text-grey mr-2">
+                                <span class="block mb-1">
+                                    Облицовочная плитка
+                                </span><br>
+                                <span>
+                                    240x71x7 мм
+                                </span>
+                            </div>
+                            <div class="text-grey">
+                                <span class="text-black text-[17px] font-medium">1001 м<sup>2</sup></span>
+                                <span class="block mb-4">остаток</span>
+                                <span>R7.WK63</span>
+                            </div>
+                            <div class="flex justify-end text-grey">
+                                <svg width="23" height="20" viewBox="0 0 23 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path class="stroke-black hover:stroke-orange hover:fill-orange"
+                                        d="M10.7114 3.2293L11.4513 4.04338L12.1913 3.22937C13.1875 2.13364 14.6688 1 16.5114 1C19.4776 1 21.8943 3.42811 21.8494 6.37628L21.8493 6.38389V6.3915C21.8493 7.11319 21.7152 7.78222 21.4461 8.43267L21.446 8.43266L21.4429 8.4405C21.3536 8.66145 21.1535 8.9963 20.7943 9.46477C20.4431 9.92264 19.9753 10.4631 19.393 11.0912C18.2273 12.3486 16.654 13.9026 14.7463 15.7702L14.7462 15.7703L14.6312 15.8829C13.4115 17.0773 12.2313 18.2329 11.6574 18.8888L11.6466 18.9012L11.6361 18.914C11.6036 18.9538 11.5259 19 11.4247 19C11.3233 19 11.2458 18.9537 11.2134 18.9141L11.2028 18.9012L11.1918 18.8886C10.6164 18.2313 9.43158 17.0712 8.20812 15.8732L8.10304 15.7703L8.10296 15.7702C6.1953 13.9026 4.622 12.3486 3.45632 11.0912C2.874 10.4631 2.40625 9.92267 2.05512 9.4648C1.69586 8.99635 1.49575 8.66148 1.4065 8.44049L1.40653 8.44048L1.40333 8.43274C1.13494 7.78394 1 7.08847 1 6.3915C1 3.42845 3.42838 1 6.3915 1C8.25881 1 9.71347 2.13138 10.7114 3.2293Z"
+                                        stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="font-medium text-2xl leading-7 mb-8">
+                            Westerwaelder Klinker Rot-blau-geflammt
+                        </h3>
+                        <div class="flex justify-between mb-10">
+                            <div>
+                                <span class="line-through decoration-orange mb-2">
+                                    2400 ₽
+                                </span><br>
+                                <span class="text-[44px] xl:text-[36px] 2xl:text-[46px] font-medium">1240 ₽</span><span
+                                    class="font-medium text-[20px]">/м<sup>2</sup></span>
+                            </div>
+                            <div
+                                class="flex justify-center items-center bg-orange text-white font-medium text-2xl w-[82px] h-[82px] xl:text-xl xl:w-[60px] xl:h-[60px] 2xl:text-2xl 2xl:w-[82px] 2xl:h-[82px] rounded-full">
+                                -60%
+                            </div>
+                        </div>
+                        <button
+                            class="order-btn w-full invisible group-hover:visible text-xl text-orange hover:text-white hover:bg-orange font-medium border border-orange rounded py-2">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                <div class="col-span-1 pb-14 md:border-r"></div>
+                <div class="hidden md:block col-span-1 pb-14 xl:border-r"></div>
+                <div class="hidden xl:block col-span-1 pb-14"></div>
+            </div>
+        </div>
+        <div class="hidden md:block flex-none w-14 lg:w-24 xl:w-32 h-inherit pt-20 border-l">
+
+        </div>
+    </section>
+
+    <section class="flex">
+        <div class="hidden md:block w-14 h-inherit pt-20 border-r">
+        </div>
+        <div class="hidden lg:block w-3/12 h-inherit pt-24 border-r pl-10 pr-4 bg-[#F6F6F6]">
+            <h2 class="text-[20px] mb-8 xl:text-[26px] font-medium xl:mb-12">АКТУАЛЬНОЕ</h2>
+        </div>
+        <div class="w-full lg:w-9/12 h-inherit px-[4%] md:p-0">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 bg-[#F6F6F6]">
+                <div class="col-span-1 md:border-r py-4 md:py-12">
+                    <div class="p-[8%] rounded border border-[#ffffff00] hover:border-orange">
+                        <div class="w-full">
+                            <img class="w-full mb-8" src="img/mockup/topical/1.jpg" alt="">
+                            <button
+                                class="flex justify-between items-center w-full text-2xl text-white bg-orange font-medium rounded-full py-4 px-6">
+                                <span>Для лестниц</span>
+                                <svg width="33" height="34" viewBox="0 0 33 34" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.5596 0H33L32.9727 34H0V20.1523H9.7798V10.0762H19.5596V0ZM3.6606 30.2003H29.3121V23.9238H3.6606V30.2003ZM13.4404 20.1523H29.3121V13.8477H13.4404V20.1523ZM23.2202 10.0762H29.3121V3.77152H23.2202V10.0762Z"
+                                        fill="white" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 md:border-r py-4 md:py-12">
+                    <div class="p-[8%] rounded border border-[#ffffff00] hover:border-orange">
+                        <div class="w-full">
+                            <img class="w-full mb-8" src="img/mockup/topical/2.jpg" alt="">
+                            <button
+                                class="flex justify-between items-center w-full text-2xl text-white bg-orange font-medium rounded-full py-4 px-6">
+                                <span>В красных тонах</span>
+                                <svg width="41" height="38" viewBox="0 0 41 38" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M11.1611 3.83011C13.5148 1.51922 16.8556 0.0283203 20.5 0.0283203C24.1444 0.0283203 27.4852 1.51922 29.8389 3.83011C32.2685 6.21554 33.7111 9.42097 33.7111 12.9991V13.3719C35.7611 14.4155 37.5833 15.9809 38.7981 17.8445C40.1648 19.9318 41 22.3172 41 25.0008C41 28.579 39.4815 31.7844 37.1278 34.1699C34.6981 36.4808 31.3574 37.9717 27.713 37.9717C26.2704 37.9717 24.9037 37.748 23.537 37.3008C22.4741 36.928 21.4111 36.4808 20.5 35.8099C19.5889 36.4808 18.5259 36.928 17.463 37.3008C16.0963 37.748 14.7296 37.9717 13.2111 37.9717C9.56667 37.9717 6.30185 36.4808 3.87222 34.1699C1.51852 31.7844 0 28.579 0 25.0008C0 22.3172 0.835185 19.9318 2.20185 17.8445C3.41667 15.9809 5.16296 14.4155 7.28889 13.3719V12.9991C7.28889 9.42097 8.73148 6.21554 11.1611 3.83011V3.83011ZM26.9537 6.66281C25.3593 5.02283 23.0056 4.05374 20.5 4.05374C17.9944 4.05374 15.6407 5.02283 14.0463 6.66281C12.6037 8.07917 11.6167 10.0173 11.3889 12.1046H11.5407C12.1481 12.03 12.6796 11.9555 13.2111 11.9555C14.7296 11.9555 16.0963 12.1791 17.463 12.6264C18.5259 12.9991 19.513 13.5209 20.5 14.1173C21.4111 13.5209 22.4741 12.9991 23.537 12.6264C24.9037 12.1791 26.2704 11.9555 27.713 11.9555C28.3204 11.9555 28.8519 12.03 29.4593 12.1046H29.6111C29.3833 10.0173 28.3963 8.07917 26.9537 6.66281V6.66281ZM16.0204 16.4282C15.1093 16.13 14.1981 15.9809 13.2111 15.9809H13.1352C12.7556 15.9809 12.3759 15.9809 11.9963 16.0555H11.8444C12.2241 17.0245 12.6796 17.8445 13.287 18.59C13.8944 19.3354 14.5778 19.9318 15.337 20.4536C15.5648 19.8573 15.8685 19.2609 16.1722 18.6645C16.5519 18.0682 16.9315 17.4718 17.387 16.95C16.9315 16.7264 16.4759 16.5027 16.0204 16.4282V16.4282ZM29.0037 16.0555C28.6241 15.9809 28.1685 15.9809 27.713 15.9809H27.637C26.7259 15.9809 25.8148 16.13 24.9796 16.4282C24.5241 16.5027 24.0685 16.7264 23.613 16.95C24.0685 17.4718 24.4481 18.0682 24.8278 18.6645C25.1315 19.2609 25.4352 19.8573 25.663 20.4536C26.4222 19.9318 27.1056 19.3354 27.713 18.59C28.3204 17.8445 28.7759 17.0245 29.1556 16.0555H29.0037ZM10.4019 21.4227C9.41481 20.3045 8.57963 18.9627 8.04815 17.5464C7.06111 18.2173 6.15 19.1118 5.46667 20.1554C4.63148 21.5718 4.1 23.2118 4.1 25.0008C4.1 27.4608 5.08704 29.6972 6.75741 31.3372C8.42778 32.9771 10.7056 33.9462 13.2111 33.9462C14.1981 33.9462 15.1093 33.7971 16.0204 33.5735C16.4759 33.4244 16.9315 33.2008 17.387 32.9772C16.6278 32.0826 15.9444 31.039 15.4889 29.9208C14.8815 28.3554 14.5019 26.7154 14.5019 25.0008V24.6281C12.9074 23.8081 11.5407 22.7645 10.4019 21.4227V21.4227ZM35.5333 20.23C34.85 19.1118 33.9389 18.2173 32.8759 17.5464C32.3444 18.9627 31.5852 20.3045 30.5981 21.4227C29.4593 22.7645 28.0926 23.8081 26.4981 24.6281V25.0008C26.4981 26.7154 26.1185 28.3554 25.5111 29.9208C25.0556 31.039 24.3722 32.0826 23.613 32.9772C24.0685 33.2008 24.5241 33.4244 24.9796 33.5735C25.8907 33.7971 26.8019 33.9462 27.713 33.9462C30.2944 33.9462 32.5722 32.9771 34.2426 31.3372C35.913 29.6972 36.9 27.4608 36.9 25.0008C36.9 23.2118 36.3685 21.5718 35.5333 20.23V20.23ZM21.2593 20.6027C21.0315 20.23 20.8037 19.8573 20.5 19.4845C20.1963 19.8573 19.9685 20.23 19.7407 20.6027C19.513 21.05 19.2852 21.4972 19.1333 21.9445H19.2093C19.5889 22.0191 20.0444 22.0191 20.5 22.0191C20.9556 22.0191 21.3352 22.0191 21.7907 21.9445H21.8667C21.7148 21.4972 21.487 21.05 21.2593 20.6027V20.6027ZM21.7148 28.4299C22.0185 27.6845 22.2463 26.7899 22.3222 25.8954H22.1704C21.6389 25.9699 21.0315 26.0445 20.5 26.0445C19.9685 26.0445 19.3611 25.9699 18.8296 25.8954H18.6019C18.7537 26.7899 18.9815 27.6845 19.2852 28.4299C19.5889 29.1754 20.0444 29.8463 20.5 30.4426C20.9556 29.8463 21.4111 29.1754 21.7148 28.4299V28.4299Z"
+                                        fill="white" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 md:border-r py-4 md:py-12">
+                    <div class="p-[8%] rounded border border-[#ffffff00] hover:border-orange">
+                        <div class="w-full">
+                            <img class="w-full mb-8" src="img/mockup/topical/3.jpg" alt="">
+                            <button
+                                class="flex justify-between items-center w-full text-2xl text-white bg-orange font-medium rounded-full py-4 px-6">
+                                <span>Популярные</span>
+                                <svg width="41" height="38" viewBox="0 0 41 38" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M31.6453 24.0089L34.1937 36.0996C33.3024 36.7354 32.4075 37.3683 31.512 37.9981L20.4998 31.8983L9.48751 37.9981L6.80585 36.0996L9.35468 24.0089L0 15.6841L1.0264 12.6162L13.6154 11.2386L18.8454 0H22.1536L27.3841 11.2386L39.9731 12.6162L41 15.6841L31.6453 24.0089ZM20.5824 27.7565L29.6789 32.792L27.5527 22.7096L35.3534 15.7793L24.8608 14.635L20.4988 5.25777L16.1359 14.6354L5.64523 15.7793L13.4454 22.7096L11.3197 32.7925L20.4988 27.7103L20.5824 27.7565Z"
+                                        fill="white" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:block flex-none w-14 lg:w-24 xl:w-32 h-inherit pt-20 border-l"></div>
+    </section>
+
+    <section class="flex">
+        <div class="hidden md:block w-14 h-inherit pt-20 border-r">
+        </div>
+        <div
+            class="hidden lg:flex w-3/12 h-inherit pt-24 border-r pl-8 pr-4 relative items-end pb-12 sm:pb-24 md:pb-36">
+            <h2 class="font-medium whitespace-nowrap lg:text-[40px] xl:text-[80px] absolute top-[80px]"><span>ВСЁ
+                    ОЧЕНЬ<br>ПРОСТО</span></h2>
+            <div class="text-grey">
+                Сделайте первый шаг и дальше мы вам поможем
+            </div>
+        </div>
+        <div class="w-full lg:w-9/12 h-inherit px-[4%] md:p-0">
+            <div class="grid grid-cols-2 xl:grid-cols-3">
+                <div class="hidden xl:block col-span-1 md:border-r py-4 md:py-12">
+
+                </div>
+                <div class="col-span-1 md:border-r px-12 relative pt-24 pb-12 sm:pb-24 md:pb-36">
+                    <h2
+                        class="block lg:hidden font-medium whitespace-nowrap sm:text-[36px] xl:text-[80px] absolute top-[40px]">
+                        ВСЁ ОЧЕНЬ ПРОСТО</h2>
+                    <div class="mb-12">
+                        <div class="text-orange font-medium text-[60px] sm:text-[80px]">01</div>
+                        <h3 class="text-xl sm:text-3xl">Оставьте заявку</h3>
+                        <span class="text-grey">на сайте или позвоните</span>
+                    </div>
+                    <div>
+                        <div class="text-orange font-medium text-[60px] sm:text-[80px]">03</div>
+                        <h3 class="text-xl sm:text-3xl">Бесплатный расчёт</h3>
+                        <span class="text-grey">по чертежам сделаем мы сами</span>
+                    </div>
+                </div>
+                <div class="col-span-1 md:border-r px-12 pt-24 pb-12 sm:pb-24 md:pb-36">
+                    <div class="mb-12">
+                        <div class="text-orange font-medium text-[60px] sm:text-[80px]">02</div>
+                        <h3 class="text-xl sm:text-3xl">Сделайте заказ</h3>
+                        <span class="text-grey">выбранного товара</span>
+                    </div>
+                    <div>
+                        <div class="text-orange font-medium text-[60px] sm:text-[80px]">04</div>
+                        <h3 class="text-xl sm:text-3xl">Оплатите заказ</h3>
+                        <span class="text-grey">и получите товар на складе или закажите доставку</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:block flex-none w-14 lg:w-24 xl:w-32 h-inherit pt-20 border-l"></div>
+    </section>
+
+    <section class="flex justify-between">
+        <div
+            class="w-full lg:w-11/12 h-inherit px-8 md:px-12 lx:px-24 pt-12 pb-12 md:pt-36 md:pb-32 bg-black text-white">
+            <div class="grid grid-cols-3 md:grid-cols-4">
+                <div class="col-span-1 text-3xl md:text-2xl lg:text-3xl mb-12">
+                    <h1>Преимущества клинкера</h1>
+                </div>
+                <div class="col-span-3">
+                    <div class="grid gap-4 grid-cols-2 xl:grid-cols-3">
+                        <div class="col-span-1 mb-12">
+                            <svg class="lg:mb-5 w-[125px] lg:w-[150px]" width="150" height="150" viewBox="0 0 150 150"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="75" cy="75" r="75" fill="#F04B38" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M103.986 54.6864V47H46V82.0217C46.0131 86.2977 47.1532 90.4316 49.2236 94.0358C51.2941 97.64 54.2949 100.74 58.0165 102.95L74.9994 113L91.9823 102.962C95.7039 100.74 98.7047 97.653 100.775 94.0487C102.846 90.4445 103.999 86.3106 103.999 82.0346V54.6994L103.986 54.6864ZM79.232 54.0147H96.8701V82.0088C96.8701 85.0575 96.0577 88.0029 94.5769 90.5737C93.0961 93.1445 90.9602 95.3406 88.3 96.9166L78.5506 102.678V54.0147H79.232ZM53.7969 54.0147H71.4351V102.678L61.6856 96.9166C59.0255 95.3406 56.8895 93.1445 55.4087 90.5737C53.928 88.0029 53.1155 85.0575 53.1155 82.0088V54.0147H53.7969Z"
+                                    fill="white" />
+                            </svg>
+                            <p class="text-xl">Премиальное качество</p>
+                        </div>
+                        <div class="col-span-1 mb-12">
+                            <svg class="lg:mb-5 w-[125px] lg:w-[150px]" width="150" height="150" viewBox="0 0 150 150"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="75" cy="75" r="75" fill="#F04B38" />
+                                <path
+                                    d="M105.932 79.8451L93.9685 83.056L81.339 75.7663L93.5154 68.7374L105.479 71.9483L107.115 65.8354L96.9433 63.1037L99.6729 52.9492L93.5474 51.3144L90.3433 63.2635L78.1669 70.2763V55.7128L86.9367 46.964L82.4425 42.4805L75.0002 49.93L67.5525 42.4805L63.0637 46.964L71.8335 55.7128V70.2763L59.6517 63.2635L56.453 51.3144L50.3275 52.9492L53.0517 63.1037L42.8798 65.8354L44.5165 71.9483L56.485 68.7374L68.6614 75.7663L56.0318 83.056L44.0634 79.8451L42.416 85.9527L52.5986 88.6844L49.8743 98.8443L55.9892 100.49L59.1986 88.53L71.8335 81.2509V95.2872L63.0637 104.036L67.5525 108.52L75.0002 101.07L82.4425 108.52L86.9367 104.036L78.1669 95.2872V81.2509L90.8018 88.53L94.0112 100.49L100.126 98.8443L97.4018 88.6844L107.584 85.9527L105.932 79.8451Z"
+                                    fill="white" stroke="white" stroke-width="0.106089" stroke-miterlimit="22.9256" />
+                            </svg>
+                            <p class="text-xl">Гарантия 25 лет на морозостойкость</p>
+                        </div>
+                        <div class="col-span-1 mb-12">
+                            <svg class="lg:mb-5 w-[125px] lg:w-[150px]" width="150" height="150" viewBox="0 0 150 150"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="75" cy="75" r="75" fill="#F04B38" />
+                                <g clip-path="url(#clip0_1454_1528)">
+                                    <path
+                                        d="M102.768 74.3187V46H74.8914C67.9064 46.0058 61.1778 48.6758 56.0385 53.4816C50.8985 58.2869 47.7226 64.8767 47.138 71.948C46.5527 79.0186 48.6026 86.0543 52.8805 91.6637L39.7676 104.998L44.6919 110L57.8168 96.6661V96.6675C63.3366 101.012 70.2617 103.094 77.2211 102.501C84.1801 101.908 90.6667 98.684 95.3977 93.4649C100.128 88.2453 102.759 81.4131 102.768 74.3187ZM74.8914 95.5577C70.5511 95.5597 66.3184 94.1817 62.788 91.6172L82.1384 71.9591L77.2141 66.9567L57.8632 86.6136C54.8889 82.3576 53.5617 77.1387 54.1343 71.9513C54.7076 66.7647 57.1398 61.9736 60.9684 58.4926C64.7964 55.0116 69.7525 53.0843 74.8912 53.0799H95.7983V74.3189C95.7983 79.9514 93.5951 85.3546 89.6748 89.3372C85.7531 93.3197 80.4357 95.5579 74.8912 95.5579L74.8914 95.5577Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1454_1528">
+                                        <rect width="63" height="64" fill="white" transform="translate(39 46)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <p class="text-xl">Абсолютная экологичность</p>
+                        </div>
+                        <div class="col-span-1 mb-12">
+                            <svg class="lg:mb-5 w-[125px] lg:w-[150px]" width="150" height="150" viewBox="0 0 150 150"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="75" cy="75" r="75" fill="#F04B38" />
+                                <g clip-path="url(#clip0_1454_1543)">
+                                    <path
+                                        d="M109.548 48.8976H116V69.5803H109.548V48.8976ZM71.1014 107H64.3059C64.3059 86.9445 77.6542 70.8678 97.9352 69.5803V48.8929H61.8011C60.78 48.8929 40.8332 49.2369 38.7955 69.9243H52.7619V106.995H45.9664C45.9664 96.8211 45.9664 86.6471 45.9664 76.473H32V73.0243C32 48.5444 51.2691 41.9956 61.8011 41.9956H104.731V76.473H101.333C95.8975 76.473 91.1398 77.5095 87.7466 79.2292V79.9217C87.7466 96.8164 103.032 97.1604 105.07 97.1604V103.714C97.2575 103.714 82.9889 99.2287 81.6334 82.6825C74.6548 88.5294 71.1014 97.9645 71.1014 107Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1454_1543">
+                                        <rect width="84" height="65" fill="white" transform="translate(32 42)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <p class="text-xl">Не требует специального ухода</p>
+                        </div>
+                        <div class="col-span-1 mb-12">
+                            <svg class="lg:mb-5 w-[125px] lg:w-[150px]" width="150" height="150" viewBox="0 0 150 150"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="75" cy="75" r="75" fill="#F04B38" />
+                                <path
+                                    d="M43.001 74.0739H71.4429V99.8658L60.7787 89.2011L55.7525 94.2276L72.4866 110.962C73.1523 111.628 74.058 112 74.9997 112C75.9413 112 76.847 111.628 77.5128 110.962L94.2469 94.2276L89.2207 89.2011L78.5564 99.8658V74.0739H106.998V66.9601H43.001V74.0739ZM43.001 48H106.998V55.1138H43.001V48Z"
+                                    fill="white" />
+                            </svg>
+                            <p class="text-xl">Высочайшая износоустойчивость</p>
+                        </div>
+                        <div class="col-span-1 mb-12">
+                            <svg class="lg:mb-5 w-[125px] lg:w-[150px]" width="150" height="150" viewBox="0 0 150 150"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="75" cy="75" r="75" fill="#F04B38" />
+                                <g clip-path="url(#clip0_1454_1533)">
+                                    <path
+                                        d="M89.9671 75.661C86.466 73.9186 83.2989 71.6149 80.5695 68.8435C77.84 66.072 75.5713 62.8562 73.8553 59.3012C72.1508 62.8562 69.8705 66.072 67.1411 68.8435C64.4231 71.6149 61.2445 73.9186 57.7435 75.661C61.2445 77.4034 64.4116 79.7072 67.1411 82.4786C69.8705 85.2501 72.1393 88.4659 73.8553 92.0209C75.5713 88.4659 77.84 85.2501 80.5695 82.4786C83.2989 79.7072 86.466 77.4034 89.9671 75.661ZM101.691 42.0059C104.628 42.0059 107 44.4148 107 47.3968C107 50.3787 104.628 52.7877 101.691 52.7877C98.7543 52.7877 96.3819 50.3787 96.3819 47.3968C96.3819 44.4148 98.7543 42.0059 101.691 42.0059ZM42.0117 78.795V72.071H42.4609C50.1425 72.071 57.1216 68.8903 62.1659 63.7683C67.2102 58.6464 70.3427 51.5715 70.3427 43.76V43.3039H77.4024V43.76C77.4024 51.5598 80.5349 58.6464 85.5792 63.7683C90.6235 68.8903 97.5911 72.071 105.284 72.071H105.733V79.2394H105.284C97.6026 79.2394 90.635 82.4201 85.5792 87.5421C80.5349 92.664 77.4024 99.7389 77.4024 107.55V108.007H70.3427V107.55C70.3427 99.7506 67.2102 92.6757 62.1659 87.5421C57.1216 82.4201 50.154 79.2394 42.4609 79.2394H42.0117V78.7833V78.795Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1454_1533">
+                                        <rect width="65" height="66" fill="white" transform="translate(42 42)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <p class="text-xl">Премиальное качество</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:block flex-none w-14 lg:w-24 xl:w-32 h-inherit pt-20 border-l"></div>
+    </section>
+
+    <section class="flex">
+        <div class="hidden md:block w-14 h-inherit pt-20 border-r">
+        </div>
+        <div class="hidden lg:block w-3/12 h-inherit pt-24 border-r pl-10 pr-4">
+            <h2 class="text-black text-[20px] mb-8 xl:text-[26px] font-medium xl:mb-12 uppercase">Сертификаты качества
+            </h2>
+        </div>
+        <div class="w-full lg:w-9/12 h-inherit px-[4%] md:p-0">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                <div class="col-span-1 pt-20 md:border-r"></div>
+                <div class="hidden md:block col-span-1 pt-20 xl:border-r"></div>
+                <div class="hidden xl:block col-span-1 pt-20"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                <div class="flex justify-center col-span-1 md:border-r p-[8%] overflow-x-visible">
+                    <img onclick="document.querySelector('#certificate-full').classList.remove('hidden')" class="cursor-pointer first:mr-[5%] border border-black z-[1]" src="/img/certificates/1.jpg"/>
+                    <img class="first:mr-[5%] border border-black z-[1]" src="/img/certificates/2.jpg"/>
+                </div>
+                <div class="flex justify-center col-span-1 md:border-r p-[8%]">
+                    <img class="first:mr-[5%] border border-black z-[1]" src="/img/certificates/3.jpg"/>
+                    <img class="first:mr-[5%] border border-black z-[1]" src="/img/certificates/4.jpg"/>
+                </div>
+                <div class="flex justify-center col-span-1 md:border-r p-[8%]">
+                    <img class="first:mr-[5%] border border-black z-[1]" src="/img/certificates/5.jpg"/>
+                    <img class="first:mr-[5%] border border-black z-[1]" src="/img/certificates/6.jpg"/>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                <div class="col-span-1 pb-14 md:border-r"></div>
+                <div class="hidden md:block col-span-1 pb-14 xl:border-r"></div>
+                <div class="hidden xl:block col-span-1 pb-14"></div>
+            </div>
+        </div>
+        <div class="hidden md:block flex-none w-14 lg:w-24 xl:w-32 h-inherit pt-20 border-l"></div>
+    </section>
+
+    <section class="flex">
+        <div class="hidden md:block w-14 h-inherit pt-20 border-r">
+        </div>
+        <div class="hidden lg:block w-3/12 h-inherit pt-20 border-r pl-10 pr-4">
+            <h2 class="text-black text-[20px] mb-8 xl:text-[26px] font-medium xl:mb-12 uppercase">КОНТАКТЫ
+            </h2>
+            <div class="mb-8 xl:mb-12">
+                <p class="text-grey text-sm pb-4 xl:pb-6">Центральный ФО</p>
+                <ul>
+                    <li class="cursor-pointer w-fit hover:text-orange underline underline-offset-2 uppercase mb-3">
+                        москва
+                    </li>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Белгород
+                    </li>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Воронеж
+                    </li>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Курск
+                    </li>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Тамбов
+                    </li>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        ТулА
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-8 xl:mb-12">
+                <p class="text-grey text-sm pb-4 xl:pb-6">Сев.Запад. ФО</p>
+                <ul>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Санкт-петербург
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-8 xl:mb-12">
+                <p class="text-grey text-sm pb-4 xl:pb-6">Южный ФО</p>
+                <ul>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Краснодар
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-8 xl:mb-12">
+                <p class="text-grey text-sm pb-4 xl:pb-6">Уральский ФО</p>
+                <ul>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Екатеринбург
+                    </li>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Тюмень
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-8 xl:mb-12">
+                <p class="text-grey text-sm pb-4 xl:pb-6">Сибирский ФО</p>
+                <ul>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Новосибирск
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-8 xl:mb-12">
+                <p class="text-grey text-sm pb-4 xl:pb-6">Дальневосточный ФО</p>
+                <ul>
+                    <li class="cursor-pointer w-fit text-grey hover:text-orange uppercase mb-3">
+                        Владивосток
+                    </li>
+                </ul>
+            </div>
+            <h2 class="uppercase font-medium text-2xl mt-36 mb-12">будьте в курсе новостей и акций</h2>
+        </div>
+        <div class="w-full lg:w-9/12 h-inherit px-[4%] md:p-0">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                <div class="col-span-1 pt-20 md:border-r"></div>
+                <div class="hidden md:block col-span-1 pt-20 xl:border-r"></div>
+                <div class="hidden xl:block col-span-1 pt-20"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                <div class="col-span-1 md:border-r px-[8%] pb-4 xl:pb-10">
+                    <h2 class="text-black text-[20px] mb-8 xl:text-[26px] font-medium xl:mb-12 uppercase">москва
+                    </h2>
+                    <a class="font-medium" href="tel:+74993502281">+7 (499) 350-22-81</a>
+                </div>
+                <div class="col-span-1 md:border-r px-[8%] pb-4 xl:pb-10">
+                    <h2 class="invisible text-[20px] mb-8 xl:text-[26px] font-medium xl:mb-12 uppercase">*</h2>
+                    <a href="mailto:info@ceramicgroup.ru">info@ceramicgroup.ru</a>
+                </div>
+                <div class="col-span-1 md:border-r px-[8%] pb-4 xl:pb-10">
+                </div>
+            </div>
+            <div class="px-[3%] mb-8">
+                <img class="w-full mb-12" src="/img/mockup/map.jpg" alt="">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-16">
+                    <div class="col-span-1 group cursor-pointer mb-8">
+                        <p class="text-grey text-sm mb-4 xl:mb-6">Дальневосточный ФО</p>
+                        <p class="uppercase group-hover:text-orange text-black mb-6">Москва Нахимовский пр. 24 с1 павильон 3, ряд 7А место 324</p>
+                        <a class="group-hover:text-orange" href="tel:+74991131057">+7 (499) 113-10-57</a>
+                    </div>
+                    <div class="col-span-1 group cursor-pointer mb-8">
+                        <p class="text-grey text-sm mb-4 xl:mb-6">Дальневосточный ФО</p>
+                        <p class="uppercase group-hover:text-orange text-grey mb-6">Москва Нахимовский пр. 24 с1 павильон 3, ряд 7А место 324</p>
+                        <a class="text-grey group-hover:text-orange" href="tel:+74991131057">+7 (499) 113-10-57</a>
+                    </div>
+                    <div class="col-span-1 group cursor-pointer mb-8">
+                        <p class="text-grey text-sm mb-4 xl:mb-6">Оптово-проектный отдел</p>
+                        <p class="uppercase group-hover:text-orange text-grey mb-6">Москва Дмитровское ш. 100 строение 2 офис 2401</p>
+                        <a class="text-grey group-hover:text-orange" href="tel:+74991131057">+7 (499) 113-10-57</a>
+                    </div>
+                    <div class="col-span-1 group cursor-pointer mb-8">
+                        <p class="text-grey text-sm mb-4 xl:mb-6">Оптово-проектный отдел</p>
+                        <p class="uppercase group-hover:text-orange text-grey mb-6">Москва Дмитровское ш. 100 строение 2 офис 2401</p>
+                        <a class="text-grey group-hover:text-orange" href="tel:+74991131057">+7 (499) 113-10-57</a>
+                    </div>
+                </div>
+                <div class="flex mt-16">
+                    <a class="mr-4 last:mr-0" href="">
+                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M26 0C40.3594 0 52 11.6407 52 26C52 40.3594 40.3594 52 26 52C11.6407 52 0 40.3594 0 26C0 11.6407 11.6407 0 26 0ZM25.9957 13.0284C22.4733 13.0284 22.0313 13.0431 20.6479 13.1068C19.267 13.1697 18.3237 13.3894 17.4993 13.7098C16.6465 14.0415 15.9229 14.4851 15.2018 15.2062C14.4808 15.9272 14.0372 16.6508 13.7055 17.5036C13.3851 18.3289 13.1654 19.2713 13.1025 20.6522C13.0396 22.0357 13.0241 22.4776 13.0241 26C13.0241 29.5224 13.0388 29.9644 13.1025 31.3478C13.1654 32.7287 13.3851 33.672 13.7055 34.4964C14.0372 35.3492 14.4808 36.0728 15.2018 36.7939C15.9229 37.5149 16.6465 37.9585 17.4993 38.2902C18.3246 38.6106 19.267 38.8303 20.6479 38.8932C22.0313 38.9561 22.4733 38.9716 25.9957 38.9716C29.5181 38.9716 29.9601 38.9569 31.3435 38.8932C32.7244 38.8303 33.6677 38.6106 34.4921 38.2902C35.3449 37.9585 36.0685 37.5149 36.7896 36.7939C37.5106 36.0728 37.9542 35.3492 38.2859 34.4964C38.6063 33.6711 38.826 32.7287 38.8889 31.3478C38.9518 29.9644 38.9673 29.5224 38.9673 26C38.9673 22.4776 38.9526 22.0357 38.8889 20.6522C38.826 19.2713 38.6063 18.328 38.2859 17.5036C37.9542 16.6508 37.5106 15.9272 36.7896 15.2062C36.0685 14.4851 35.3449 14.0415 34.4921 13.7098C33.6668 13.3894 32.7244 13.1697 31.3435 13.1068C29.9601 13.0439 29.5181 13.0284 25.9957 13.0284V13.0284ZM25.8673 18.5253C21.6678 18.5253 18.2634 21.9297 18.2634 26.1284C18.2634 30.3279 21.6678 33.7323 25.8673 33.7323C30.0669 33.7323 33.4704 30.3279 33.4704 26.1284C33.4704 21.9288 30.066 18.5253 25.8673 18.5253ZM25.8673 30.7483C23.3166 30.7483 21.2483 28.68 21.2483 26.1292C21.2483 23.5776 23.3166 21.5093 25.8673 21.5093C28.4189 21.5093 30.4873 23.5776 30.4873 26.1292C30.4873 28.68 28.4189 30.7483 25.8673 30.7483ZM35.6473 18.2246C35.6473 19.2601 34.8074 20.1 33.7719 20.1C32.7356 20.1 31.8966 19.261 31.8966 18.2246C31.8966 17.1883 32.7356 16.3493 33.7719 16.3493C34.8074 16.3493 35.6473 17.1892 35.6473 18.2246Z" fill="#F04B38"/>
+                        </svg>
+                    </a>
+                    <a class="mr-4 last:mr-0" href="">
+                        <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M26.332 0C40.6914 0 52.332 11.6407 52.332 26C52.332 40.3594 40.6914 52 26.332 52C11.9727 52 0.332031 40.3594 0.332031 26C0.332031 11.6407 11.9727 0 26.332 0ZM27.9748 40.6686V27.3861H32.4328L33.1004 22.2097H27.9739V18.9043C27.9739 17.4054 28.39 16.3846 30.5393 16.3846L33.2804 16.3837V11.7535C32.8066 11.6906 31.1794 11.5493 29.2859 11.5493C25.3336 11.5493 22.6278 13.9614 22.6278 18.3918V22.2088H18.1578V27.3852H22.6278V40.6678H27.9739L27.9748 40.6686Z" fill="#F04B38"/>
+                        </svg>
+                    </a>
+                    <a class="mr-4 last:mr-0" href="">
+                        <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M26.6646 0C41.0239 0 52.6646 11.6407 52.6646 26C52.6646 40.3594 41.0239 52 26.6646 52C12.3052 52 0.664551 40.3594 0.664551 26C0.664551 11.6407 12.3052 0 26.6646 0ZM27.9033 36.0918C17.7176 36.0918 11.9089 29.1098 11.6669 17.4916H16.7683C16.9363 26.019 20.6965 29.6318 23.6754 30.3761V17.4916H28.4796V24.8465C31.4214 24.5295 34.5114 21.1785 35.5546 17.4916H40.3589C39.5577 22.0348 36.2067 25.3858 33.8231 26.7641C36.2059 27.8814 40.0238 30.8043 41.4762 36.0918H36.1878C35.0515 32.5547 32.2226 29.8171 28.4796 29.4449V36.0918H27.9024H27.9033Z" fill="#F04B38"/>
+                        </svg>
+                    </a>
+                    <a class="mr-4 last:mr-0" href="">
+                        <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M26.9971 0C41.3564 0 52.9971 11.6407 52.9971 26C52.9971 40.3594 41.3564 52 26.9971 52C12.6377 52 0.99707 40.3594 0.99707 26C0.99707 11.6407 12.6377 0 26.9971 0ZM13.2295 24.4193C20.5957 21.2104 25.5068 19.0947 27.9645 18.0722C34.9818 15.1536 36.4393 14.6462 37.3895 14.6299C37.5988 14.6264 38.0657 14.6781 38.369 14.9236C38.6248 15.1312 38.6946 15.4112 38.7282 15.6076C38.7618 15.804 38.804 16.2519 38.7704 16.6026C38.3905 20.5979 36.7443 30.2934 35.9078 34.7686C35.5538 36.6621 34.856 37.2969 34.1815 37.359C32.7145 37.4942 31.5998 36.389 30.1792 35.4578C27.955 34.0002 26.699 33.0923 24.5402 31.67C22.0455 30.0264 23.6624 29.1227 25.0847 27.6462C25.4568 27.2594 31.9219 21.3792 32.0469 20.846C32.0624 20.7797 32.077 20.5307 31.9288 20.3989C31.7815 20.2671 31.5627 20.3128 31.4059 20.3481C31.1828 20.3989 27.6302 22.7472 20.7482 27.3921C19.7394 28.0847 18.8263 28.4224 18.008 28.4043C17.106 28.3845 15.3702 27.8943 14.0806 27.4748C12.4982 26.9605 11.2405 26.6883 11.3499 25.8148C11.4067 25.36 12.0339 24.8948 13.2295 24.4184V24.4193Z" fill="#F04B38"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:block flex-none w-14 lg:w-24 xl:w-32 h-inherit pt-20 border-l"></div>
+    </section>
+
+    <div id="product-card"
+        class="fixed top-0 left-0 w-full h-full bg-cover items-center justify-end px-12 sm:pr-[140px]"
+        style="background-image: url('/img/mockup/product-card/1.jpg'); display: none;">
+        <svg onclick="closeProductCard()" class="group absolute right-12 top-12 cursor-pointer" width="52" height="52"
+            viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="group-hover:stroke-orange" cx="26" cy="26" r="25.5" transform="rotate(-180 26 26)"
+                stroke="white" />
+            <path class="group-hover:fill-orange"
+                d="M16.0948 33.4214L18.8085 36.1905L25.9995 28.8525L33.1906 36.1905L35.9043 33.4214L25.9996 23.3143L16.0948 33.4214Z"
+                fill="white" />
+            <path class="group-hover:fill-orange"
+                d="M35.9043 18.7691L33.1906 16L25.9995 23.338L18.8084 16L16.0947 18.7691L25.9994 28.8762L35.9043 18.7691Z"
+                fill="white" />
+        </svg>
+        <div class="bg-white p-[40px] max-w-[420px] rounded">
+            <div class="flex text-[13px] justify-between mb-6">
+                <div class="w-1/3 text-grey mr-2">
+                    <span class="block mb-1">
+                        Облицовочная плитка
+                    </span><br>
+                    <span>
+                        240x71x7 мм
+                    </span>
+                </div>
+                <div class="text-grey">
+                    <span class="text-black text-[17px] font-medium">1001 м<sup>2</sup></span>
+                    <span class="block mb-4">остаток</span>
+                    <span>R7.WK63</span>
+                </div>
+                <div class="flex justify-end text-grey">
+                    <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="stroke-black hover:stroke-orange hover:fill-orange"
+                            d="M10.7114 3.2293L11.4513 4.04338L12.1913 3.22937C13.1875 2.13364 14.6688 1 16.5114 1C19.4776 1 21.8943 3.42811 21.8494 6.37628L21.8493 6.38389V6.3915C21.8493 7.11319 21.7152 7.78222 21.4461 8.43267L21.446 8.43266L21.4429 8.4405C21.3536 8.66145 21.1535 8.9963 20.7943 9.46477C20.4431 9.92264 19.9753 10.4631 19.393 11.0912C18.2273 12.3486 16.654 13.9026 14.7463 15.7702L14.7462 15.7703L14.6312 15.8829C13.4115 17.0773 12.2313 18.2329 11.6574 18.8888L11.6466 18.9012L11.6361 18.914C11.6036 18.9538 11.5259 19 11.4247 19C11.3233 19 11.2458 18.9537 11.2134 18.9141L11.2028 18.9012L11.1918 18.8886C10.6164 18.2313 9.43158 17.0712 8.20812 15.8732L8.10304 15.7703L8.10296 15.7702C6.1953 13.9026 4.622 12.3486 3.45632 11.0912C2.874 10.4631 2.40625 9.92267 2.05512 9.4648C1.69586 8.99635 1.49575 8.66148 1.4065 8.44049L1.40653 8.44048L1.40333 8.43274C1.13494 7.78394 1 7.08847 1 6.3915C1 3.42845 3.42838 1 6.3915 1C8.25881 1 9.71347 2.13138 10.7114 3.2293Z"
+                            stroke-width="2" />
+                    </svg>
+                </div>
+            </div>
+            <h3 class="font-medium text-2xl leading-7 mb-8">
+                Westerwaelder Klinker Rot-blau-geflammt
+            </h3>
+            <div class="flex justify-between mb-10">
+                <div>
+                    <span class="line-through decoration-orange mb-2">
+                        2400 ₽
+                    </span><br>
+                    <span class="text-[44px] xl:text-[36px] 2xl:text-[46px] font-medium">1240 ₽</span><span
+                        class="font-medium text-[20px]">/м<sup>2</sup></span>
+                </div>
+                <div
+                    class="flex justify-center items-center bg-orange text-white font-medium text-2xl w-[82px] h-[82px] xl:text-xl xl:w-[60px] xl:h-[60px] 2xl:text-2xl 2xl:w-[82px] 2xl:h-[82px] rounded-full">
+                    -60%
+                </div>
+            </div>
+            <button
+                class="order-btn w-full visible text-xl text-orange hover:text-white hover:bg-orange font-medium border border-orange rounded py-2">
+                Забронировать
+            </button>
+        </div>
+    </div>
+
+    <div id="order-form"
+        class="fixed top-0 left-0 w-full h-full bg-[#00000080] flex justify-center items-center hidden">
+        <div class="relative bg-white p-12 pt-20 text-center">
+            <svg onclick="document.getElementById('order-form').classList.add('hidden')"
+                class="absolute top-4 right-4 group cursor-pointer" width="28" height="28" viewBox="0 0 28 28"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="group-hover:stroke-orange" cx="14" cy="14" r="13.75" transform="rotate(-180 14 14)"
+                    stroke="#636363" stroke-width="0.5" />
+                <path class="group-hover:fill-orange"
+                    d="M8.66732 17.9962L10.1285 19.4873L14.0007 15.5361L17.8728 19.4873L19.334 17.9962L14.0007 12.554L8.66732 17.9962Z"
+                    fill="#636363" />
+                <path class="group-hover:fill-orange"
+                    d="M19.3327 10.1065L17.8715 8.61548L13.9993 12.5667L10.1272 8.61548L8.66602 10.1065L13.9993 15.5488L19.3327 10.1065Z"
+                    fill="#636363" />
+            </svg>
+            <h3 class="font-medium text-2xl mb-8">Как с вами связаться?</h3>
+            <input class="border border-black rounded px-[40px] py-3 mb-10 outline-none text-2xl font-medium"
+                type="text" value="+7"><br>
+            <button class="w-full visible text-2xl text-orange hover:text-white hover:bg-orange font-medium border border-orange rounded py-3">
+                Забронировать
+            </button>
+        </div>
+    </div>
+
+    <div id="certificate-full" class="fixed top-0 left-0 w-full h-full bg-[#00000080] z-[2] flex justify-between items-center hidden">
+        <svg onclick="document.querySelector('#certificate-full').classList.add('hidden')" class="cursor-pointer group absolute top-4 right-4" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="group-hover:stroke-orange" cx="26" cy="26" r="25.5" transform="rotate(-180 26 26)" stroke="white"/>
+            <path class="group-hover:fill-orange" d="M16.0948 33.4213L18.8085 36.1904L25.9995 28.8524L33.1906 36.1904L35.9043 33.4213L25.9996 23.3142L16.0948 33.4213Z" fill="white"/>
+            <path class="group-hover:fill-orange" d="M35.9043 18.7691L33.1906 16L25.9995 23.338L18.8084 16L16.0947 18.7691L25.9994 28.8762L35.9043 18.7691Z" fill="white"/>
+        </svg>
+        <svg class="cursor-pointer group ml-4" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="group-hover:stroke-orange" cx="26" cy="26" r="25.5" transform="rotate(90 26 26)" stroke="white"/>
+            <path class="group-hover:fill-orange" d="M28.4213 35.9052L31.1904 33.1915L23.8524 26.0005L31.1904 18.8094L28.4213 16.0957L18.3142 26.0004L28.4213 35.9052Z" fill="white"/>
+        </svg>
+        <img src="/img/certificates/full/1.jpg" alt="" class="h-10/12">
+        <svg class="cursor-pointer group mr-4" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="group-hover:stroke-orange" cx="26" cy="26" r="25.5" transform="rotate(-90 26 26)" stroke="white"/>
+            <path class="group-hover:fill-orange" d="M23.5787 16.0948L20.8096 18.8085L28.1476 25.9995L20.8096 33.1906L23.5787 35.9043L33.6858 25.9996L23.5787 16.0948Z" fill="white"/>
+        </svg>
+            
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

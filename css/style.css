@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'CoFo Sans';
+    font-weight: 400;
+    src: local('CoFo Sans Regular'), local('CoFo-Sans-Regular'), url('fonts/CoFoSans-Regular.woff2') format('woff2'), url('fonts/CoFoSans-Regular.woff') format('woff'), url('fonts/CoFoSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'CoFo Sans';
+    font-weight: 500;
+    src: local('CoFo Sans Medium'), local('CoFo-Sans-Medium'), url('fonts/CoFoSans-Medium.woff2') format('woff2'), url('fonts/CoFoSans-Medium.woff') format('woff'), url('fonts/CoFoSans-Medium.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Cofo Sans', sans-serif;
+    color: #262626;
+}
+.layout{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.411);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup{
+    width: 474px;
+    height: 415px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 3px;
+}
+.close-btn{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid #636363;
+    background: none;
+    color: #636363;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.close-btn:hover{
+    color: #fff;
+    background-color: #000;
+    border: none;
+}
+
+.d-none{
+    display: none;
+}
+
+@media (max-width: 768px) { 
+
+    .product-content{
+        display: none;
+    }
+    
+    .product-checkbox:checked + .product-checkbox-label{
+        transform: rotate(180deg);
+    }
+
+    .product-checkbox:checked + .product-checkbox-label + .product-content {
+        display: block;
+    }
+
+}
